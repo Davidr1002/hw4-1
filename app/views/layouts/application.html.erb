@@ -48,7 +48,9 @@
         <h1>Travel journal</h1>
       </div>
       <div class="col-sm-3 text-end">
+         <% if @current_user %>
         <a href="/posts/new/" class="btn btn-success">New Post</a>
+        <%end%>
       </div>
     </div>
 

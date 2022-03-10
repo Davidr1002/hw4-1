@@ -23,7 +23,13 @@
     </div>
 
     <%= form.submit "Create Post", class: "btn btn-primary" %>
+    
+    <p>
+    <a href="/places">back to places</a>
+    </p>
+    
   <% end %>
+
 <% else %>
   You must first <a href="/sessions/new">login</a> to post.
 <% end %>
