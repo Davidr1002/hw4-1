@@ -3,7 +3,7 @@
     <div class="col-md-3 col-sm-6">
       <h4>
         <% if post.user %>
-          <%= post.user.first_name %>
+          <%= post.user.username %>
         <% else %>
           anonymous
         <% end %>
@@ -15,7 +15,6 @@
         <img src="<%= post.image %>" class="img-fluid">
       <% end %>
 
-      <p><%= post.body %></p>
     </div>
   <% end %>
 </div>
