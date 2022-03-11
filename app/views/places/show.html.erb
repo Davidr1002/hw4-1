@@ -1,31 +1,29 @@
 <h1><%= @place.name %></h1>
+<% if @current_user %>
+<p>
+  <a class="btn btn-success" href="/posts/new?place_id=<%= @place.id %>" role="button">New Post</a> 
+</p>
 
+<p>
+ <a href="/places" class="btn btn-success">Back to All Places</a>
+</p>
 
-<% if @current_user%>
-  
-<div class="ml-3">
-<div class="container-fluid">
 <div class="row">
-  <h2>My Posts</h2>
-  <% for post in @place.posts %>
+<% for post in @place.posts %>
 <div class="col-md-4 col-sm-6">
-    <h3><%= post.title %></h3>
-    <h4><%= post.posted_on %></h4>
-    <p><%= post.description %></p>
+ 
+  <h4><%= post.title %></h4>
+  <p><%= post.posted_on %></p>
+
   <% if post.uploaded_image.attached? %>
-  <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid w-100">
-  <% end %>
-
-  <p> <%post.description%>  </p>
-    <% end %>
+  <img src="<%= url_for(post.uploaded_image) %>" class="image-fluid w-100">
   <% else %>
+  <img src="<%= post.image %>" class="image-fluid w-100">
+  <% end %>
+    <div class="col text-center">
+  <p><%= post.description %></p>
+</div>
+</div>
 <% end %>
-
-
-  <p>
-  <a href="/places" class="btn btn-success">Back to All Places</a>
-  </p>
-
-</div>
-</div>
+<% end %>
 </div>
