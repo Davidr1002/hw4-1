@@ -1,24 +1,5 @@
-# class PostsController < ApplicationController
-
-#   def new
-#     @post = Post.new
-
-#   end
-
-#   def create
-#     @post = Post.new(params["post"])
-#     @post.save
-#     redirect_to "/places/#{@post.place.id}"
-#   end
-
-# end
-
-
 class PostsController < ApplicationController
 
-  def index
-    @posts = Post.all
-  end
 
   def new
     @post = Post.new
@@ -33,6 +14,6 @@ class PostsController < ApplicationController
     else
       flash[:notice] = "Login first."
     end
-    redirect_to "/posts"
+    redirect_to "/places/#{@post.place.id}"
   end
 end

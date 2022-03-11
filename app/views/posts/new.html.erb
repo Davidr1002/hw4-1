@@ -27,9 +27,11 @@
     <p>
     <a href="/places">back to places</a>
     </p>
-    
+
+<%= form.hidden_field "place_id" %>    
   <% end %>
 
 <% else %>
   You must first <a href="/sessions/new">login</a> to post.
+
 <% end %>

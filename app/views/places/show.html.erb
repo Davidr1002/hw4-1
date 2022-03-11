@@ -6,9 +6,6 @@
   <% for post in @place.posts %>
     <h3><%= post.title %></h3>
 
-  <% end %>
-
-<% end %>
   
 <% if post.uploaded_image.attached? %>
  <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
@@ -26,3 +23,7 @@
   <p>
     <a href="/places">Back to All Places</a>
   </p>
+  
+  <% end %>
+
+<% end %>
